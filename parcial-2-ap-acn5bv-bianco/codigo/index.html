@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ConectiKrus - Gestión de Candidatos</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header-content">
+      <h1>ConectiKrus - Gestión de Candidatos</h1>
+      <p>MVP - Base de datos de candidatos</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Agregar candidato</h2>
+
+      <form id="candidateForm" class="form">
+        <div class="form-group">
+          <label for="name">Nombre</label>
+          <input type="text" id="name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="technology">Tecnología principal</label>
+          <input type="text" id="technology" required>
+        </div>
+
+        <div class="form-group">
+          <label for="seniority">Seniority</label>
+          <select id="seniority" required>
+            <option value="Junior">Junior</option>
+            <option value="Semi Senior">Semi Senior</option>
+            <option value="Senior">Senior</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="availability">Disponibilidad</label>
+          <select id="availability" required>
+            <option value="Disponible">Disponible</option>
+            <option value="No disponible">No disponible</option>
+          </select>
+        </div>
+
+        <button type="submit" class="primary-button">Agregar candidato</button>
+      </form>
+    </section>
+
+    <section class="card">
+      <div class="table-header">
+        <h2>Candidatos</h2>
+        <div class="search-box">
+          <label for="search">Buscar por nombre o tecnología</label>
+          <input type="search" id="search" placeholder="Ejemplo: React">
+        </div>
+      </div>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Email</th>
+              <th>Tecnología</th>
+              <th>Seniority</th>
+              <th>Disponibilidad</th>
+              <th>Estado</th>
+              <th>Acción</th>
+            </tr>
+          </thead>
+          <tbody id="candidateTable"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
